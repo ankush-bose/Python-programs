@@ -1,0 +1,40 @@
+print("Welcome to Wedding")
+print("\n1. Add User \n 2.Remove User \n3.List of all Guests\n4.Verify\n5.Exit")
+guest=["Virat","Anu","Devil","Ram","Shyam","Jodhu","Modhu"]
+
+choice=int(input("Enter Choice:\t"))
+while (choice!=5):
+    if(choice==1):
+        new_guest=input("Enter Guest name:\t")
+        guest.append(new_guest)
+        print("\n1. Add User \n 2.Remove User \n3.List of all Guests\n4.Verify\n5.Exit")
+        choice=int(input("Enter Choice:\t"))
+
+    elif(choice==2):
+        rm=input("Enter name to remove:\t")
+        guest.remove(rm)
+        print("\n1. Add User \n 2.Remove User \n3.List of all Guests\n4.Verify\n5.Exit")
+        choice=int(input("Enter Choice:\t"))
+
+    elif(choice==3):
+        print(guest)
+        print("\n1. Add User \n 2.Remove User \n3.List of all Guests\n4.Verify\n5.Exit")
+        choice=int(input("Enter Choice:\t"))
+
+    elif(choice==4):
+        gst=input("Enter guest name:\t")
+        if gst in guest:
+            print("You are WELCOME")
+        else:
+            print("You are not invited")
+            gst=input("Enter guest name:\t")
+        print("\n1. Add User \n 2.Remove User \n3.List of all Guests\n4.Verify\n5.Exit")
+        choice=int(input("Enter Choice:\t"))
+
+    else:
+        print("Incorrect Input")
+        print("\n1. Add User \n 2.Remove User \n3.List of all Guests\n4.Verify\n5.Exit TRY AGAIN")
+        choice=input("Enter choice:\t")        
+        
+print("Thank You")
+exit=input()
