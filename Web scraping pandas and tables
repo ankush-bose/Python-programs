@@ -1,0 +1,24 @@
+from bs4 import BeautifulSoup as bs
+import urllib.request
+import pandas as pd
+sause=urllib.request.urlopen('http://www.espncricinfo.com/series/18692/scorecard/1145001/australia-vs-sri-lanka-2nd-test-sl-in-aus-2018-19#gp-inning-00').read()
+soup=bs(sause,'lxml')
+
+
+#body=soup.body
+#for nav in body.find_all('p'):
+ #   print(nav.text)
+table=soup.table
+
+
+print(table)
+row=soup.find_all('tr')
+
+for tr in row:
+    td=tr.find_all('td')
+    data=[i.text for i in td]
+    print(data)
+dfs=pd.read_html('http://www.espncricinfo.com/series/18692/scorecard/1145001/australia-vs-sri-lanka-2nd-test-sl-in-aus-2018-19#gp-inning-00')
+
+for df in dfs:
+    print(df)
