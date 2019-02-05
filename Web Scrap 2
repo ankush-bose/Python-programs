@@ -1,0 +1,10 @@
+from bs4 import BeautifulSoup as bs
+import urllib.request
+
+sause=urllib.request.urlopen('https://www.quora.com/Why-and-how-do-you-become-an-expert-in-Machine-learning').read()
+soup=bs(sause,'lxml')
+
+
+body=soup.body
+for nav in body.find_all('p'):
+    print(nav.text)
